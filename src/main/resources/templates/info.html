@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Info</title>
+    </head>
+    <body th:align="center">
+        <h1>Info about the employee</h1>
+        <form th:align="center">
+            <p th:text="'First name: ' + ${employee.firstName}">
+            <p th:text="'Second name: ' + ${employee.secondName}">
+            <p th:text="'Last name: ' + ${employee.lastName}">
+            <p th:text="'Age: ' + ${employee.age}">
+            <p th:text="'Email: ' + ${employee.email}">
+            <p th:text="'Job: ' + ${employee.job}">
+        </form>
+        <form th:action="@{/send-email}">
+            <button type="submit" th:name="email" th.text = "Send Email" th:value="${employee.email}">Send Email</button>
+        </form>
+        <p></p>
+        <a href="/start">Start</a>
+    </body>
+</html>

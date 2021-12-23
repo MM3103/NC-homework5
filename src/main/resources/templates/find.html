@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Find </title>
+    </head>
+    <body th:align="center">
+        <h1>Get info about the employee</h1>
+        <form action="#" th:action="@{/find}" th:object="${requestData}" method="post">
+            <p>First name: <input type="text" name="name" required th:field="*{firstName}" /></p>
+            <p>Last name: <input type="text" name="name" required th:field="*{lastName}" /></p>
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </form>
+        <a href="/start">Start</a>
+    </body>
+</html>

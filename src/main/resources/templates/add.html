@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add</title>
+    </head>
+    <body th:align="center">
+        <h1>Enter data about the employee:</h1>
+        <form action="#" th:action="@{/add}" th:object="${employee}" method="post">
+            <p>First name: <input type="text" name="name" pattern="[a-zA-Zа-яА-Я]{2,}" required th:field="*{firstName}" /></p>
+            <p>Second name: <input type="text" name="name" pattern="[a-zA-Zа-яА-Я]{2,}" required th:field="*{secondName}" /></p>
+            <p>Last name: <input type="text" name="name" pattern="[a-zA-Zа-яА-Я]{2,}" required th:field="*{lastName}" /></p>
+            <p>Age: <input type="number" name="growth" min="18" max="100" required th:field="*{age}" /></p>
+            <p>Salary: <input type="number" name="growth" min="12792" required th:field="*{salary}" /></p>
+            <p>Email: <input type="text" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required th:field="*{email}" /></p>
+            <p>Job: <input type="text" name="name" pattern="[a-zA-Zа-яА-Я]{2,}" required th:field="*{job}" /></p>
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </form>
+        <p>You can uploading employee from file. You need to choose the file.</p>
+        <form th:action="@{/uploading-from-file}" enctype="multipart/form-data" method="post">
+            <input type="file" name="file" class="form-control-file">
+            <button type="submit" name="Upload" class="btn btn-primary">Upload File</button>
+        </form>
+        <p></p>
+        <a href="/start">Start</a>
+    </body>
+</html>

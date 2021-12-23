@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Send message</title>
+    </head>
+    <body th:align="center">
+        <h1>Send message</h1>
+        <form action="#" th:action="@{/send-email}" th:object="${email}" method="post">
+            <p><input type="hidden" th:field="*{to}" /><p>
+            <p>Title: <input type="text" name="name" placeholder="title" required th:field="*{title}" /></p>
+            <p>Content: </p>
+            <p><textarea name="comment" required th:field="*{content}"></textarea></p>
+            <p><input type="submit" value="Submit" /><input type="reset" value="Reset" /></p>
+        </form>
+        <p></p>
+        <a href="/start">Start</a>
+    </body>
+</html>
